@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "ART Screenscrapper",
+  "version": "0.1",
+  "background": {
+    "scripts": ["jquery.js", "background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["jquery.js", "content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+	"activeTab"
+  ]
+}
