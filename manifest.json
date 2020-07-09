@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "ART Screenscrapper",
+  "name": "ART Screen Scraper",
   "version": "0.1",
   "background": {
     "scripts": ["assets/jquery.js", "background.js"]

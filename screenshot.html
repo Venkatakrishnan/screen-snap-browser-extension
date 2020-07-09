@@ -19,15 +19,19 @@
 		padding:8px;
 		background:white;
 	}
-	#screenshotDone button{
+	#screenshotDone button, #buttons button{
 		background-color: #4CAF50; /* Green */
-		  border: none;
-		  color: white;
-		  padding: 10px;
-		  text-align: center;
-		  text-decoration: none;
-		  display: inline-block;
-		  font-size: 16px;
+		border: none;
+		color: white;
+		padding: 10px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin-right:4px;
+	}
+	#addSnip{
+		background-color: #ff9966 !important;
 	}
   </style>
   <body>
@@ -42,15 +46,21 @@
 		<tr><td><b>Current: </b></td><td id="current"></td></tr>
 	</table>
 	
-	<table width="800" cellpadding=5 cellspacing=5 id="screenshotTable">
-		<tr><td>
-			<canvas id="screenshotcanvas">
+	<table id="ignorePDF" width=800 cellpadding=5 cellspacing=5 border=0 style="margin-top:15px;">
+		<tr><td id="buttons">
+			<button id="addSnip">Add More</button>
+			<button id="generatePDF">Save as PDF</button>
+			<button id="generatePPT">Save as PPTX</button>
 		</td></tr>
 	</table>
 	
-	<table id="ignorePDF" width=800 cellpadding=5 cellspacing=5 border=0 style="margin-top:15px;">
-		<tr><td><button id="generatePDF">Save as PDF</button></td><td><button id="generatePPT">Save as PPTX</button></td></tr>
+	<table width="800" cellpadding=5 cellspacing=5 id="screenshotTable">
+		<tr><td id="screenshotcanvas">
+			
+		</td></tr>
 	</table>
+	
+	
 	<div id="screenshotDone">
 		<button id="screenshotConfirm">Done</button>
 	</div>
