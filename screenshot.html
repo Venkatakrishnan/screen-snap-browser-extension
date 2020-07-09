@@ -1,12 +1,38 @@
 <html>
-  <script src="jquery.js"></script>
+  <script src="assets/jquery.js"></script>
   <script src="pdf/jspdf.js"></script>
   <script src="pdf/autotable.js"></script>
   <script src="pptx/pptxgen.bundle.js"></script>
   <script src="pptx/libs/jszip.min.js"></script>
   <script src="pptx/pptxgen.min.js"></script>
   <script src="screenshot.js"></script>
+  <script src="assets/jcrop.js"></script>
+  <link rel="stylesheet" href="assets/jcrop.css" type="text/css" />
+  <style>
+	#accStructrueTable, #ignorePDF, #screenshotTable, #screenshotDone {
+		display:none;
+	}
+	#screenshotTable{
+		margin-top:15px;border: 1px solid #333;
+	}
+	#screenshotDone{
+		padding:8px;
+		background:white;
+	}
+	#screenshotDone button{
+		background-color: #4CAF50; /* Green */
+		  border: none;
+		  color: white;
+		  padding: 10px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+	}
+  </style>
   <body>
+  
+	<img id="screenshotimage" src="assets/white.png">
 
     <table width=800 cellpadding=5 cellspacing=5 border=0 id="accStructrueTable">
 		<tr><td><b>Account Structure: </b></td><td id="acc"></td></tr>
@@ -16,15 +42,17 @@
 		<tr><td><b>Current: </b></td><td id="current"></td></tr>
 	</table>
 	
-	<table width="800" cellpadding=5 cellspacing=5 style="margin-top:15px;border: 1px solid #333;"  id="screenshotTable">
+	<table width="800" cellpadding=5 cellspacing=5 id="screenshotTable">
 		<tr><td>
-			<img id="target" width="800" height="480" style="margin-top:15px;border: 1px solid red;">
+			<canvas id="screenshotcanvas">
 		</td></tr>
 	</table>
 	
 	<table id="ignorePDF" width=800 cellpadding=5 cellspacing=5 border=0 style="margin-top:15px;">
 		<tr><td><button id="generatePDF">Save as PDF</button></td><td><button id="generatePPT">Save as PPTX</button></td></tr>
 	</table>
-	
+	<div id="screenshotDone">
+		<button id="screenshotConfirm">Done</button>
+	</div>
   </body>
 </html>

@@ -11,9 +11,6 @@ chrome.runtime.onMessage.addListener(
 		
 		var obj = {'acc': $accName, 'funding': $funding, 'viewType': $viewType, 'dateRange': $dateRange, 'prior': $prior, 'current': $current};
 		
-		
-		console.log(obj);
-		
 		chrome.runtime.sendMessage({"message": "open_new_tab", "params": obj});
     }
   }

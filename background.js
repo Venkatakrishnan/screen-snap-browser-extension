@@ -11,7 +11,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.message === "open_new_tab" ) {
-		console.log(request.params);
+		
 		chrome.tabs.captureVisibleTab((screenshotUrl) => {
 		
 			const viewTabUrl = chrome.extension.getURL('screenshot.html?flush=' + timestamp)
