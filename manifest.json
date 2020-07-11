@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "ART Screen Scraper",
+  "name": "Website Screen Scraper",
   "version": "0.1",
   "background": {
     "scripts": ["assets/jquery.js", "background.js"]
@@ -10,13 +10,15 @@
       "matches": [
         "<all_urls>"
       ],
-      "js": ["assets/jquery.js", "content.js"]
+      "js": ["assets/jquery.js", "content.js", "assets/page.js"]
     }
   ],
   "browser_action": {
     "default_icon": "assets/icon.png"
   },
   "permissions": [
-	"activeTab"
+	"activeTab",
+	"storage",
+	"unlimitedStorage"
   ]
 }

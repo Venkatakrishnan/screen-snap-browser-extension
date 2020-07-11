@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			var canvas = $(this)[0];
 			var dataURL = canvas.toDataURL();
 			var slide = pptx.addSlide({ masterName: "MASTER_SLIDE" });
-			var w1 = canvas.width > 1000 ? pixeltoinch(canvas.width) : pixeltoinch(canvas.width)
+			var w1 = canvas.width > 1000 ? pixeltoinch(canvas.width) : pixeltoinch(canvas.width) // *1.5
 			var h1 = canvas.width > 1000 ? pixeltoinch(canvas.height) : pixeltoinch(canvas.height)
 			
-			slide.addImage({ path:dataURL, x:0.25, y:1.3, w:w1, h:h1 });
+			slide.addImage({ path:dataURL, x:0.25, y:0.8, w:w1, h:h1 });
 			slide.addNotes('This is a powerpoint slide created with javascript code holding the image captured from Birst dashboards!');
 		});
 		
@@ -121,6 +121,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     height: jcropi.h+20
                 });
 			$('#screenshotcanvas').append(newCanvas);
+			
+			$(newCanvas).css({'border': '1px solid #CCC', 'margin': '8px'});
 
 			var ctx = $(newCanvas)[0].getContext("2d");
 			var img = document.getElementById("screenshotimage");
